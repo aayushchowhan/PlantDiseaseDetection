@@ -1,0 +1,22 @@
+{
+      "gOFlkqwZQJZ1gkWOA7KH": {
+            "num_of_node": 5,
+            "dimention": "1000mx1000m",
+            "nodes": {
+                  "5JMgqWAXoWxw96M5bGb1": {
+                        "no_of_hands": 3,
+                        "hands": {
+                              "swY9lflDPQmekeepyK93": {
+                                    "no_of_sensors": 4
+                              }
+                        }
+                  },
+                  "3DoeqCcwqjYKphH43v0V": {
+                        "no_of_hands": 3
+                  },
+                  "V3Jg9W3LB1mgW5Bzfi2o": {
+                        "no_of_hands": 2
+                  }
+            }
+      }
+}

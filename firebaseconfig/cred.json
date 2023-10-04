@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "agrohackathon-4c0dd",
+  "private_key_id": "952254ec3b76fd4210e81b4c091085d0946308ef",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDPzOyduvZxQBwX\nA+C1ywKtuGCve+F/qwO9nhmQZCYAEwsON8KsI4zgn5n+ppL/lNtwgnFt0N43Zq41\niUvC3+P65tmINdXAuj72AGC2ORTKaLkNW2WKiFcoFpUpbG3ibbuK9SlDv5GMBv5A\ngy1uPZbybZoU0NbAksohXZi7TouDIfcCHEHwEOwdE0FVAMcBmHi0skjiUWATWG5q\nfjqMhj7bvB7hHC5RNqibY3CWOn2kAIy4023C55K4hiwnGWYCbY66BDaKmD8kcT5Z\n7uiYAW/aMs6IMdWy7OWE24cYiUgV20SZTmjDW9Hde96gnO3VKupKvEgbUoO4qsV4\nXKhbK/WDAgMBAAECggEADLGsjLAkqONtM9y5R/G4XqtiQKYVLurgBh/X2PG9Pojr\nRnmSi1h6nSgyzJMZbMKHqzZUvowhXwoHP179QVDTCPs8M61yOt1FxlpcjhUrl3fR\nQicgq1dL17eVchvdFJV2fPUgCbL0rbSpqIA68L6Tb4jRfk8Jp2bwMRyaHWsda6u1\ntHRMMfYQYgNVWe5tNP9sPZfkuXlAgKk4ihx5WEeEk75VBZjWJc6kKg+EoAoqSINd\nk/xqUdElWbS9eDRjKo/z0Nyk5iTCJ3XKX1TV6IzbtZlq45ESYRoOtcnomfhJO3IN\n85WNGzuvkZVbtA7+PaLfQdUlQGlLPGCbNN9vxMRqSQKBgQD7/HcxFBlbneVXQJjQ\njdDL9Wo/jwhL2S5eMBI0F/3bwfN3s2E4RfjihVDhhe5I2oNgU5/z6QhoRzWG8v0H\nwXnu8YiM1x8DXpswTEA7FgKwfRVaaNo4mv7Y7gsFLvHs4oEgIKAjCgWPXXr+tZ4b\nJ8YIlJ3Rl/oMPZx2Ii0GtVsd2QKBgQDTHEfjy0sFej3ouE8UYgb200mM/qADMRHp\nZJebG+IT69iGsxg9ZXKoRn+agYYmnK/HgEgkcF3DqXvsmcJPrX01IucKTVhIhAJg\n+yhAhcAxkg135WlUYMQlWGXCiSOKaJE0ctRnHdabr0tyc3iuYXw6Y4JvH7fEEx/8\nLcOnIkVouwKBgCJhqimqImObwaUMDU23a9vIWnzdmTYwJeF4EaPF+j830W5trUAu\nW+0cX5LF4WNTXUWRY2u2Sg1gWe9VzCx4u5hcoFMHLxYYnHgUj1cAg9Fs37L8R3od\nu9QBdsN4Sk4WAaROj0r4nRWYnaWPRklSPfUBwh7M67Mr3ONJendF227RAoGAJLje\nqHlMa3+AFWM6HkmO/JB0UtpX6zY172tYE9sd0GlOGOA+by+eajcZKz8snrrSuNlP\ns0b4iHiK3fVBH6sGBKA1oE0j9jlAUK5fqhmZ/QVy4lA9qjfK5tQhn11LmV/nIkB3\nQhimpB4x+Y6sh2jduypkHgBebvUEs1Ein4gOmtECgYEA8EOeWzFnxKG2BkMgaZWN\neV0SE8FtaPAoVWnRH/1foSa8Ei19ZmPslCFjDtb2faGGEbyja4e4liKGwi9opB/c\nKvEuhFDLpWJz22xlxDYzjft+tNLIt7uiBkO4CgcJKMBSvKBgE9+mpmjbqDhPr4if\nSLgFO/qfg9OtXuNyrCxTOjo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "agrohackathon-4c0dd@appspot.gserviceaccount.com",
+  "client_id": "104017337080676396446",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/agrohackathon-4c0dd%40appspot.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

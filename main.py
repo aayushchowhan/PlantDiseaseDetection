@@ -130,12 +130,12 @@ async def checkapproved():
     else :
         return {'status':'not verified'}
 @app.post('/add')
-async def addData(humiditysensor:float,tempraturesensor:float,token:str):
+async def addData(humiditysensor:float,tempraturesensor:float,water:float,token:str):
     if not checktoken(token):
         return {'msg':'invalid token'}
-    get_ref('app_data','ao6ITO9dZ4aPmkNro8Hb').set({'humiditysensor':humiditysensor,'tempraturesensor':tempraturesensor})
+    get_ref('app_data','ao6ITO9dZ4aPmkNro8Hb').set({'humiditysensor':humiditysensor,'tempraturesensor':tempraturesensor ,'water':water })
     print('added data')
-    return {'humid':humiditysensor,'temp':tempraturesensor,'msg':'sent'}
+    return {'humid':humiditysensor,'temp':tempraturesensor,'water':water,'msg':'sent'}
 @app.get('/toggleapproved/')
 async def changeapproved():
     global authverified

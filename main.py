@@ -33,7 +33,7 @@ def on_snapshot(doc_snapshot, changes, read_time):
         moter=doc.to_dict()['moter']
         print(moter)
 
-with open('token.txt') as f:
+with open('./PlantDiseaseDetection/token.txt') as f:
     token=f.read()
 def checktoken(tok):
     global token
@@ -49,7 +49,7 @@ def generate_random_string(length):
     
     # Generate a random string of the specified length
     random_string = ''.join(random.choice(characters) for _ in range(length))
-    with open('token.txt','w') as f:
+    with open('./PlantDiseaseDetection/token.txt','w') as f:
         f.write(random_string)
     return random_string
 
@@ -58,9 +58,9 @@ class PlantInfo(BaseModel):
     accuracy: Optional[float] = None
     disease_type: Optional[str] = None
     
-MODELS = {'corn':tf.keras.models.load_model("/home/rudish/Documents/aprog/PlantDiseaseDetection/Plant Dis/corn/corn.h5"),
-          'potato':tf.keras.models.load_model("/home/rudish/Documents/aprog/PlantDiseaseDetection/Plant Dis/potato/potatos.h5"),
-          'tomato':tf.keras.models.load_model("/home/rudish/Documents/aprog/PlantDiseaseDetection/Plant Dis/Tomato/Tomato.h5")
+MODELS = {'corn':tf.keras.models.load_model("./PlantDiseaseDetection/Plant Dis/corn/corn.h5"),
+          'potato':tf.keras.models.load_model("./PlantDiseaseDetection/Plant Dis/potato/potatos.h5"),
+          'tomato':tf.keras.models.load_model("./PlantDiseaseDetection/Plant Dis/Tomato/Tomato.h5")
 
 }
 CLASS_NAMES = {'corn':['Blight', 'Common_Rust', 'Gray_Leaf_Spot', 'Healthy'],

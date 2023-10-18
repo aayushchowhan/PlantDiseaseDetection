@@ -4,7 +4,7 @@ from firebaseconfig.firebase import add_data_one , add_subcollection_data , get_
 import json
 
 from datetime import datetime
-with open('./cache/FarmField.json' , 'r') as f:
+with open('./PlantDiseaseDetection/cache/FarmField.json' , 'r') as f:
     FarmField=json.load(f)
 
 
@@ -123,7 +123,7 @@ class Node:
                 'farmerfieldRef':self.farmerfieldRef
             }
         )
-        with open('./cache/FarmField.json' , 'w') as f:
+        with open('./PlantDiseaseDetection/cache/FarmField.json' , 'w') as f:
             dict=self.to_dict()
             del dict['farmerfieldRef']
             if 'nodes' in  FarmField[self.farmerfieldRef.id]:

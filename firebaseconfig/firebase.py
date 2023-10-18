@@ -2,8 +2,8 @@ from firebase_admin import firestore,credentials
 import typing
 from google.cloud.firestore_v1.document import DocumentReference
 import os
-os.environ['GOOGLE_APPLICATION_CREDENTIALS']='./firebaseconfig/cred.json'
-cred = credentials.Certificate("./firebaseconfig/cred.json")
+os.environ['GOOGLE_APPLICATION_CREDENTIALS']='./PlantDiseaseDetection/firebaseconfig/cred.json'
+cred = credentials.Certificate("./PlantDiseaseDetection/firebaseconfig/cred.json")
 # Initialize Firestore client
 db = firestore.Client()
 

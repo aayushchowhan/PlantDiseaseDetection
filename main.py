@@ -8,7 +8,9 @@ from io import BytesIO
 from PIL import Image
 import tensorflow as tf
 from firebaseconfig.models import FarmerField ,Node , FieldData
-from firebaseconfig.firebase import get_ref
+from firebaseconfig.firebase import get_ref ,db
+import random
+import string
 app = FastAPI()
 origins = [
     "http://localhost",
@@ -21,14 +23,35 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+authverified=False
+moter=False
+def on_snapshot(doc_snapshot, changes, read_time):
+    for doc in doc_snapshot:
+        global authverified , moter
+        print(u'Received document snapshot: {}'.format(doc.id))
+        authverified=doc.to_dict()['verified']
+        moter=doc.to_dict()['moter']
+        print(moter)
 
-
+with open('token.txt') as f:
+    token=f.read()
+def checktoken(tok):
+    global token
+    return tok==token 
 
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
     return image
 
-
+def generate_random_string(length):
+    # Define the characters to choose from for the random string
+    characters = string.ascii_letters + string.digits  # You can add more characters if needed
+    
+    # Generate a random string of the specified length
+    random_string = ''.join(random.choice(characters) for _ in range(length))
+    with open('token.txt','w') as f:
+        f.write(random_string)
+    return random_string
 
 class PlantInfo(BaseModel):
     name: str
@@ -93,5 +116,42 @@ async def addFieldData(handid:str,phsensor_value:float,moituresensor_value:float
     fielddata=FieldData(HandRef= get_ref('FieldData',handid),phsensor_value=phsensor_value,moituresensor_value=moituresensor_value).create()
     print('added data')
     return {'id':fielddata.ref.id,'handid':handid,'phsensor_value':phsensor_value,'moituresensor_value':moituresensor_value}
+
+doc_ref = db.collection('Farmers').document('K69vsidPUpOHbcCIpAE03EmjKfV2')
+moter=doc_ref.get().to_dict()['moter']
+print(moter)
+doc_watch = doc_ref.on_snapshot(on_snapshot)
+@app.get('/isapproved/')
+async def checkapproved():
+    if authverified :
+        global token
+        token=generate_random_string(10)
+        return {'status':'verified','token':token}
+    else :
+        return {'status':'not verified'}
+@app.post('/add')
+async def addData(humiditysensor:float,tempraturesensor:float,token:str):
+    if not checktoken(token):
+        return {'msg':'invalid token'}
+    get_ref('app_data','ao6ITO9dZ4aPmkNro8Hb').set({'humiditysensor':humiditysensor,'tempraturesensor':tempraturesensor})
+    print('added data')
+    return {'humid':humiditysensor,'temp':tempraturesensor,'msg':'sent'}
+@app.get('/toggleapproved/')
+async def changeapproved():
+    global authverified
+    doc_ref.set({'verified':False},merge=True)
+    authverified=False
+    return authverified
+
+@app.get('/motertoggle/')
+async def changeapproved():
+    global moter
+    doc_ref.set({'moter':not moter},merge=True)
+    moter= not moter
+    return moter
+@app.get('/readmoter/')
+async def changeapproved():
+    global moter
+    return moter
 if __name__ == "__main__":
     uvicorn.run(app, host='0.0.0.0', port=8000)
